@@ -1,0 +1,23 @@
+\setcounter{equation}{0}
+
+\question \textgreek{Αρχικά έχουμε ότι: }
+
+\begin{center}
+        
+\begin{align*}
+    &\int_{-1}^{1}(1-x)^\kappa dx = \left[\frac{(1-x)^{\kappa+1}}{\kappa+1}\right]_{-1}^{1} = -\frac{2^{\kappa+1}}{\kappa+1}\\
+    \implies &\lim_{\kappa\to0}\int_{-1}^{1}(1-x)^\kappa dx = \lim_{\kappa\to0}-\frac{2^{\kappa+1}}{\kappa+1} = \lim_{\kappa\to0}-\frac{2^{\kappa+1}}{\kappa+1}
+    = \lim_{\kappa\to0}-\frac{e^{(\kappa+1)ln2}}{\kappa+1}\\
+    \overset{\mathrm{u=\kappa+1}}{=\joinrel=\joinrel=} & \lim_{u\to0}-\frac{e^{uln2}}{u} = (-1)\cdot \pm \infty
+\end{align*}
+        
+\textgreek{Άρα το όριο δεν υπάρχει.\\ Παίρνοντας το όριο στο $+\infty$ έχουμε: }
+        
+\begin{align*}
+    \lim_{\kappa\to+\infty}-\frac{2^{\kappa+1}}{\kappa+1} = &\lim_{\kappa\to+\infty}-\frac{2^{\kappa+1}}{\kappa+1}
+    = \lim_{\kappa\to+\infty}-\frac{e^{(\kappa+1)ln2}}{\kappa+1}
+    \overset{\mathrm{u=\kappa+1}}{=\joinrel=\joinrel=}\lim_{u\to+\infty}-\frac{e^{uln2}}{u}\\
+    \underset{\mathrm{DLH}}{\overset{\left(\frac{\infty}{\infty}\right)}{=\joinrel=}}&\lim_{u\to+\infty}-\frac{ln2\cdot e^{uln2}}{1} = -ln2 \cdot (+\infty) = -\infty
+\end{align*}
+        
+\end{center}

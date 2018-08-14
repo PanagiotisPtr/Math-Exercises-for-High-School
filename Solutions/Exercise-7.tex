@@ -1,0 +1,127 @@
+\setcounter{equation}{0}
+        
+\question  
+
+\begin{align*}
+    f(x) = \varepsilon\varphi x,x\in[0,\frac{\pi}{2})\cup(\frac{\pi}{2}, \frac{3\pi}{2}) && y=\frac{2\sqrt{3}}{7\pi}x
+\end{align*}
+        
+\begin{center}
+\textgreek{Για την $f$ έχουμε ότι: }
+\begin{align*}
+    f(x) = \varepsilon\varphi x,x &\in D_f \implies f'(x) = \frac{1}{\sigma\upsilon\nu^2 x} > 0, \forall x\in D_f\\
+    &f''(x) = 2\frac{\varepsilon\varphi x}{\sigma\upsilon\nu^2 x}
+\end{align*}
+
+\textgreek{Άρα η $f\uparrow[0,\frac{\pi}{2})=A_1$ και $f\uparrow(\frac{\pi}{2}, \frac{3\pi}{2})=A_2$}
+\vspace{3mm}
+      
+\textgreek{Για $x\in[0,\frac{\pi}{2})$ η $f:$ κυρτή αφού $f''(x)>0$, για $x\in(\frac{\pi}{2}, \pi]$ η $f:$ κοίλη αφού $f''(x)<0$, τέλος για $x\in[\pi, \frac{3\pi}{2})$ η $f:$ κυρτή αφού $f''(x)>0$\\}
+      
+\vspace{3mm}
+\textgreek{Επειδή όμως η εξήσωση της εφαπτομένης της $f$ στο 0 είναι: $y=x$ και η $f$ κυρτή στο $[0,\frac{\pi}{2})$ η $f$ είναι πάνω απο την $y=x$.}
+\vspace{3mm}
+      
+\textgreek{Όμως και $y=\frac{2\sqrt{3}}{7\pi}x < x$ οπότε η $f(x)\geq\frac{2\sqrt{3}}{7\pi}x$, ισότητα μόνο για $x=0$ στο $[0,\frac{\pi}{2})$}
+\vspace{3mm}
+      
+\textgreek{Για $\frac{\pi}{2} < x < \pi$ η $f(x) < 0$ και $\frac{2\sqrt{3}}{7\pi}x > 0$ άρα η $f$ δεν τέμνει την $y = \frac{2\sqrt{3}}{7\pi}x$ στο $(\frac{\pi}{2},\pi]$}
+\vspace{3mm}
+      
+\textgreek{Για $x\in({\pi}, \frac{3\pi}{2})$}
+\begin{align*}
+    &g(x) = f(x) - \frac{2\sqrt{3}}{7\pi}x = \varepsilon\varphi x - \frac{2\sqrt{3}}{7\pi}x\\
+    \implies &g(x) = \varepsilon\varphi x - \frac{2\sqrt{3}}{7\pi}x \implies g(x) = \varepsilon\varphi x -  \frac{\sqrt{3}}{3}\cdot \frac{6}{7\pi}x =  \varepsilon\varphi x - \varepsilon\varphi \left(\frac{7\pi}{6}\right)\cdot \frac{6}{7\pi}x\\
+    \implies &g(x) = \varepsilon\varphi x - \varepsilon\varphi \left(\frac{7\pi}{6}\right)\cdot \frac{6}{7\pi}x
+\end{align*}
+      
+\textgreek{και}
+      
+\begin{equation*}
+    g'(x) = \frac{1}{\sigma\upsilon\nu^2 x} - \frac{2\sqrt{3}}{7\pi} > 0, \forall x\in({\pi}, \frac{3\pi}{2})
+\end{equation*}
+      
+\textgreek{Αφού: }
+\begin{align*}
+    2\sqrt{3} < 2\cdot 3 = 6 \implies 2\sqrt{3} < 6 < 7 \implies \frac{2\sqrt{3}}{7} < 1
+\end{align*}
+\textgreek{και}
+\begin{align*}
+    x\in({\pi}, \frac{3\pi}{2}) \implies -1 < \sigma\upsilon\nu x \leq 0 \implies 1 < \sigma\upsilon\nu^2 x \implies \frac{1}{\sigma\upsilon\nu^2 x} > 1
+\end{align*}
+      
+\textgreek{Άρα η $g\uparrow({\pi}, \frac{3\pi}{2})$ και $g(\frac{7\pi}{6}) = 0$ άρα $x=\frac{7\pi}{6}$ μοναδική ρίζα στο $({\pi}, \frac{3\pi}{2})$}
+\vspace{3mm}
+      
+\textgreek{Άρα τελικά $x=0$ και $x=\frac{7\pi}{6}$ μοναδικές ρίζες της εξήσωσης $f(x) = \frac{2\sqrt{3}}{7\pi}x$}
+\vspace{3mm}
+      
+\textgreek{Κάνοντας μια πρόχειρη γραφική παράσταση έχουμε: }
+      
+\begin{tikzpicture}
+\begin{axis}[
+        samples=100,grid=major,
+        width=13.5cm,
+        axis lines = middle,
+        xmin=-1, xmax=3*pi/2+0.2, ymin=-1, ymax=2,
+    ]
+    \addplot[domain=0:3.1/2, blue] {sin(deg(x))/cos(deg(x))};
+    \addplot[domain=3.3/2:(3*3.1)/2, blue] {sin(deg(x))/cos(deg(x))};
+    \addplot[name path=t1, domain=pi:7*pi/6, blue] {sin(deg(x))/cos(deg(x))};
+      
+    \addplot[thick, domain=0:6,teal] coordinates {(7*pi/6,-1)(7*pi/6,3)};
+    \addplot[name path=q1, thick, domain=0:6,teal] coordinates {(7*pi/6,0)(7*pi/6,0.5777)};
+    
+    \path[name path=axis] (axis cs:-1,0) -- (axis cs:4,0);
+    \addplot[name path=l1, red] {((2*sqrt(3))/(7*3.14))*x};
+    \node [rotate=0] at (axis cs:  7*pi/6+0.6,  0.47) {A($\frac{7\pi}{6}$, $\frac{\sqrt{3}}{3})$};
+    \node [rotate=0] at (axis cs:  -0.35,  0.12) {$O(0,0)$};
+    \node [rotate=0] at (axis cs:  7*pi/6-0.13,  -0.23) {B($\frac{7\pi}{6}$,0)};
+    \addplot [only marks] table {
+        0   0
+        3.663   0
+        3.663   0.577
+    };
+      
+    \addplot [
+        thick,
+        color=blue,
+        fill=blue,
+        fill opacity=0.05
+    ]
+        fill between[
+            of=l1 and t1,
+            soft clip={domain=0:7*pi/6},
+    ];
+      
+    \addplot [
+        thick,
+        color=red,
+        fill=red,
+        fill opacity=0.05
+    ]
+        fill between[
+        of=t1 and q1,
+        soft clip={domain=0:4},
+    ];
+    \node[anchor=west] (source) at (axis cs:4.1,0.19){\Large$\Omega_2$};
+    \node (destination) at (axis cs:3.38,0.14){};
+    \draw[->,>=stealth](source) to [out=180,in=0] (destination);
+    \node [rotate=0] at (axis cs:  2.5,  .2) {\Large$\Omega_1$};
+\end{axis}
+\end{tikzpicture}
+
+\textgreek{Οπότε έχουμε ότι $E(\Omega_1) = (AOB) - E(\Omega_2)$}
+\textgreek{Επειδή η $f$ είναι περιοδική με περίοδο $\pi$ θα ισχύει ότι: }
+\begin{align*}
+    &E(\Omega_2) = \int_{\pi}^{\frac{7\pi}{6}}f(x)dx = \int_{\pi-\pi}^{\frac{7\pi}{6} - \pi}f(x)dx = \int_{0}^{\frac{\pi}{6}}f(x)dx\\
+    \implies &E(\Omega_2) = \int_{0}^{\frac{\pi}{6}}\varepsilon\varphi xdx = \int_{0}^{\frac{\pi}{6}}\frac{\eta\mu x}{\sigma\upsilon\nu x}dx
+    \overset{\mathrm{u = \sigma\upsilon\nu x}}{=\joinrel=\joinrel=} \int_{1}^{\frac{\sqrt{3}}{2}}-\frac{(u)'}{u}dx\\
+    \implies &E(\Omega_2) = \int_{\frac{\sqrt{3}}{2}}^{1}\frac{(u)'}{u}dx = \Big[lnu\Big]_{\frac{\sqrt{3}}{2}}^{1} = ln1 - ln(\frac{\sqrt{3}}{2}) = - ln(\frac{\sqrt{3}}{2})
+\end{align*}
+\textgreek{Οπότε τέλος έχουμε ότι: }
+\begin{align*}
+    E(\Omega_1) = (AOB) &- E(\Omega_2) = \frac{7\pi}{6}\cdot \frac{\sqrt{3}}{3}\cdot\frac{1}{2} - ln(\frac{\sqrt{3}}{2})\\
+    \implies &E(\Omega_1) = \frac{7\pi\sqrt{3}}{36} - ln(\frac{\sqrt{3}}{2})
+\end{align*}
+\end{center}

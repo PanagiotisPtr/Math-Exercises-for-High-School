@@ -1,0 +1,17 @@
+\setcounter{equation}{0}
+        
+\question  
+        
+\textgreek{Έχουμε ότι: }
+\begin{equation}
+    e = \lim_{x\to0}(1+x)^\frac{1}{x}
+\end{equation}
+\begin{proof}[\unskip\nopunct]
+
+\textgreek{Οπότε: }
+\begin{align*}
+    &\lim_{h\to0}\frac{ln(x+h) - lnx}{h} = \lim_{h\to0}\frac{ln(\frac{x+h}{x})}{h} = \lim_{h\to0}\frac{1}{h}\cdot ln(1 + \frac{h}{x})\\
+    \overset{u=\frac{h}{x}}{=} &\lim_{u\to0}\frac{1}{x\cdot u}\cdot ln(1 + u) = \lim_{u\to0}\frac{1}{x}\cdot ln((1 + u)^\frac{1}{u})\\
+    \overset{\mathrm{(1)}}{=} &\frac{1}{x}\cdot lne = \frac{1}{x}
+\end{align*}
+\end{proof}

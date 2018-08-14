@@ -1,0 +1,113 @@
+\documentclass{exam}
+
+% Language and font encodings
+\usepackage[greek,english]{babel}
+\usepackage[utf8x]{inputenc}
+
+% Math
+\usepackage{amsmath} % math
+\usepackage{amssymb} % symbols
+\usepackage{amsthm}
+
+% Multiple choice
+\usepackage{multicol}
+
+% Page numbering
+\footer{}{\thepage}{}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\title{\textgreek{Μια συλλογή σύντομων ασκήσεων στα \\ Μαθηματικά Γ' λυκείου}}
+\date{}
+\author{\textgreek{Παναγιώτης Πετρίδης}}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \begin{questions}
+        % Exercise #1
+        \newpage
+        \setcounter{page}{1}
+        \setcounter{equation}{0}
+        
+        \question \textgreek{Αν συνάρτηση $f:\mathbb{R}\rightarrow\mathbb{R}$ 
+        παραγωγίσημη με $f(\alpha) = \gamma$ και $f(\beta) = \delta$. Να αποδείξετε ότι: }
+
+        \begin{equation*}
+            \int_{\alpha}^{\beta}f(x)dx + \int_{\gamma}^{\delta}f^{-1}(x)dx = \beta\cdot\delta - \alpha\cdot\gamma
+        \end{equation*}
+
+        % Exercise #2
+        \setcounter{equation}{0}
+        \vspace{0.5cm}
+
+        \question \textgreek{Αν συνάρτηση $f:[-1,1]\rightarrow\mathbb{R}$ 
+        με τύπο $f(x) = \sqrt{1 - x^2}$ να υπολογίσετε το ολοκλήρωμα: }
+
+        \begin{equation*}
+            E(\Omega) = \int_{0}^{1}f(x)dx
+        \end{equation*}
+
+        % Exercise #3
+        \setcounter{equation}{0}
+        \vspace{0.5cm}
+        
+        \question \textgreek{α) Ποιά απο τις παρακάτω σχέσεις ισχύει?}
+
+        \begin{multicols}{4}
+            $i$) $e^\pi > \pi^e$
+            \\
+            $ii$) $e^\pi < \pi^e$
+            \\
+            $iii$) $e^\pi = \pi^e$
+        \end{multicols}
+
+        \textgreek{β) Να αποδείξετε την απάντησή σας.}
+
+        % Exercise #4
+        \setcounter{equation}{0}
+        \vspace{0.5cm}
+        
+        \question \textgreek{Να υπολογίσετε, αν υπάρχουν, τα όρια: }
+        \begin{align*}
+            \lim_{\kappa\to0}\int_{-1}^{1}(1-x)^\kappa dx   &&   \lim_{\kappa\to+\infty}\int_{-1}^{1}(1-x)^\kappa dx
+        \end{align*}
+
+        % Exercise #5
+        \setcounter{equation}{0}
+        \vspace{0.5cm}
+        
+        \question \textgreek{Να υπολογίσετε το εμβαδό του χωρίου που περικλίετε απο τον $x'x$ και τις ευθείες της εξίσωσης:}
+        \begin{equation*}
+            y^2 - 2y -x^2 + 1 = 0
+        \end{equation*}
+        
+        % Exercise #6
+        \setcounter{equation}{0}
+        \vspace{0.5cm}
+
+        \question \textgreek{Εαν γνωρίζετε ότι $e = \lim_{x\to0}(1+x)^\frac{1}{x}$ να αποδείξετε ότι: }
+        \begin{equation*}
+            \lim_{h\to0}\frac{ln(x+h) - lnx}{h} = \frac{1}{x}
+        \end{equation*}
+        \textgreek{Σημείωση: μην χρησημοποιήσετε τον τύπο $(lnx)' = \frac{1}{x}$}
+
+        % Exercise #7
+        \setcounter{equation}{0}
+        \vspace{0.5cm}
+
+        \question \textgreek{Αν $f:x\in[0,\frac{\pi}{2})\cup(\frac{\pi}{2}, \frac{3\pi}{2})\rightarrow\mathbb{R}$ 
+        η συνάρτηση $f(x) = \varepsilon\varphi x$ να υπολογίσετε το εμβαδό του χωρίου $\Omega$ 
+        που περικλείεται απο την $C_f$, τον $x'x$ και την ευθεία $y=\frac{2\sqrt{3}}{7\pi}x$.}
+
+        % Exercise #8
+        \setcounter{equation}{0}
+        \vspace{0.5cm}
+
+        \question \textgreek{Έστω συνάρτηση $f(x) = \eta\mu kx$ με $x,k>0$ και 
+        $x\leq\frac{\pi}{k}$. Να αποδείξετε ότι το εμβαδό του χωρίου $\Omega$ που 
+        περικλίετε απο την $f$, την ευθεία $y=1$ και τον άξονα $y'y$
+        τίνει στο 0 καθως το $k$ τίνει στο $+\infty$}
+
+    \end{questions}
+\end{document}

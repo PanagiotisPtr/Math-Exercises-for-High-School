@@ -1,0 +1,47 @@
+\setcounter{equation}{0}
+
+\question  
+
+\begin{align*}
+    &y^2 - 2y -x^2 + 1 = 0
+    \implies y^2 - 2y -x^2 + 1 -x + x = 0\\
+    \implies &y^2 - 2y -x^2 + 1 -x + x  -xy + xy = 0\\
+    \implies &y^2 +xy -y -xy -x^2 + x -y -x + 1 = 0\\
+    \implies &(y-x-1)(y+x-1)=0
+\end{align*}
+\begin{center}
+\textgreek{Οπότε οι ευθείες είναι: $(\varepsilon_1): y = x + 1$ και $(\varepsilon_2): y = -x + 1$}
+        
+\begin{tikzpicture}
+    \begin{axis}[
+        samples=100,grid=major,
+        width=10cm,
+        axis lines = middle,
+        xmin=-1.5, xmax=1.5, ymin=-0.5, ymax=2,
+    ]
+    \addplot[blue] (x,x+1);
+    \addplot[red] (x,-x+1);
+    \addplot[name path=e1, red, domain=0:1] (x,-x+1);
+    \addplot[name path=e2, blue, domain=-1:0] (x,x+1);
+    \path[name path=axis] (axis cs:-1,0) -- (axis cs:1,0);
+    \addplot [
+        thick,
+        color=blue,
+        fill=blue,
+        fill opacity=0.05
+    ]
+    fill between[
+        of=e2 and axis,
+        soft clip={domain=-1:1},
+    ];
+    \node [rotate=0] at (axis cs:  .25,  .25) {\Huge$\Omega$};
+    \end{axis}
+\end{tikzpicture}
+      
+\textgreek{Οπότε έχουμε ότι:}
+      
+\begin{equation*}
+    E(\Omega) = \frac{1}{2}2\cdot 1 = 1
+\end{equation*}
+
+\end{center}

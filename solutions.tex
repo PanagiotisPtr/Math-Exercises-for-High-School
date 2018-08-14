@@ -1,0 +1,79 @@
+\documentclass{exam}
+
+% Language and font encodings
+\usepackage[greek,english]{babel}
+\usepackage[utf8x]{inputenc}
+
+% Math
+\usepackage{amsmath} % math
+\usepackage{amssymb} % symbols
+\usepackage{amsthm}
+\usepackage{sectsty}
+\usepackage{enumitem}
+
+% Table of signs and plots
+\usepackage{pgf,tikz}
+\usepackage{tkz-tab}
+\usetikzlibrary{shapes,snakes,arrows,backgrounds}
+\usetikzlibrary{scopes,svg.path,shapes.geometric,shadows}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{xpatch}
+
+% Page numbering
+\footer{}{\thepage}{}
+
+% grpah functions
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.10}
+
+\usepgfplotslibrary{fillbetween}
+
+% tkz-tab hardcodes $0$ for the zeros
+\xpatchcmd{\tkzTabLine}{$0$}{$\bullet$}{}{}
+% we want solid lines
+\tikzset{t style/.style={style=solid}}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\title{\textgreek{Μια συλλογή σύντομων ασκήσεων στα \\ Μαθηματικά Γ' λυκείου}}
+\date{\underline{\textgreek{Λύσεις}}}
+\author{\textgreek{Παναγιώτης Πετρίδης}}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+        \vspace{1.5cm}
+        \input{Solutions/Exercise-1}
+
+        \vspace{1.5cm}
+        \input{Solutions/Exercise-2}
+
+        \vspace{1.5cm}
+        \input{Solutions/Exercise-3}
+
+        \vspace{1.5cm}
+        \input{Solutions/Exercise-4}
+
+        \vspace{1.5cm}
+        \input{Solutions/Exercise-5}
+
+        \vspace{1.5cm}
+        \input{Solutions/Exercise-6}
+
+        \vspace{1.5cm}
+        \input{Solutions/Exercise-7}
+
+        \vspace{1.5cm}
+        \input{Solutions/Exercise-8}
+    \end{questions}
+\end{document}
+
+
+% tkz-tab hardcodes $0$ for the zeros
+%\xpatchcmd{\tkzTabLine}{$0$}{$\bullet$}{}{}
+% we want solid lines
+%\tikzset{t style/.style={style=solid}}

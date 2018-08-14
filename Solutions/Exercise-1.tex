@@ -1,0 +1,26 @@
+\setcounter{page}{1}
+\setcounter{equation}{0}
+
+\question
+
+\begin{center}
+\begin{proof}[\unskip\nopunct]
+\begin{align}
+    \notag
+    &\int_{\alpha}^{\beta}f(x)dx + \int_{\gamma}^{\delta}f^{-1}(x)dx = \beta\cdot\delta - \alpha\cdot\gamma\notag
+    \implies \int_{\alpha}^{\beta}f(x)dx + \int_{\gamma}^{\delta}f^{-1}(x)dx = \left[xf(x)\right]_{\alpha}^{\beta}\\
+    &\implies \int_{\alpha}^{\beta}f(x)dx = \left[xf(x)\right]_{\alpha}^{\beta} - \int_{\gamma}^{\delta}f^{-1}(x)dx
+\end{align}
+\textgreek{Θέτοντας $u=f^{-1}(x)\implies x=f(u) \implies dx=f'(u)du$ και $u_1 = f^{-1}(\gamma) = \alpha$, $u_2 = f^{-1}(\delta) = \beta$}
+\begin{align}
+    \int_{\gamma}^{\delta}f^{-1}(x)dx = \int_{\alpha}^{\beta}uf'(u)du = \int_{\alpha}^{\beta}xf'(x)dx
+\end{align}
+
+\textgreek{Οπότε θα έχουμε: }
+\begin{align*}
+    \underset{\mathrm{(2)}}{\overset{\mathrm{(1)}}{\implies}} \implies \int_{\alpha}^{\beta}f(x)dx = \left[xf(x)\right]_{\alpha}^{\beta} - \int_{\alpha}^{\beta}xf'(x)dx
+\end{align*}
+\textgreek{Το οποίο ισχύει καθώς είναι ο ορισμός της ολοκλήρωσης κατα παράγοντες.}
+\end{proof}
+
+\end{center}

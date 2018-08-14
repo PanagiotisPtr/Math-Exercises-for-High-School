@@ -1,0 +1,48 @@
+\setcounter{equation}{0}
+        
+\question  
+
+\textgreek{Έχουμε ότι: }
+\begin{center}
+\begin{align}
+    f(x) = \eta\mu kx \quad x,k>0 \quad x \leq \frac{\pi}{k}
+\end{align}
+\textgreek{Γραφηκά έχουμε ότι: }
+\begin{tikzpicture}
+\begin{axis}[
+        samples=100,grid=major,
+        width=10cm,
+        axis lines = middle,
+        xmin=-1, xmax=pi+0.15, ymin=-0.5, ymax=2,
+        restrict y to domain=0:1,
+        xtick={0,1.5708,3.14159},
+        xticklabels={a,$\frac{\pi}{2\kappa}$,$\frac{\pi}{\kappa}$},
+    ]
+    \addplot[name path=s1, domain=0:pi/2, blue] {sin(deg(x)))};
+    \addplot[domain=0:pi, blue] {sin(deg(x)))};
+    \path[name path=yaxis](current axis.below origin)-- (current axis.above origin);
+
+    \addplot [
+        thick,
+        color=blue,
+        fill=blue,
+        fill opacity=0.05
+    ]
+    fill between[
+        of=s1 and yaxis,reverse=false,
+        soft clip={domain y = 0:1},
+    ];
+    \node [rotate=0] at (axis cs:  0.3,  .75) {\Large$\Omega$};
+\end{axis}
+\end{tikzpicture}
+
+\textgreek{Οπότε: }
+\begin{align*}
+    &E(\Omega) = \frac{\pi}{2\kappa}\cdot1 - \int_{0}^{\frac{\pi}{2\kappa}}f(x)dx = \frac{\pi}{2\kappa}- \int_{0}^{\frac{\pi}{2\kappa}}\eta\mu(kx)dx\\
+    \implies &E(\Omega) = \frac{\pi}{2\kappa} - \Big[-\frac{\sigma\nu\upsilon kx}{k}\Big]_{0}^{\frac{\pi}{2\kappa}} = \frac{\pi}{2\kappa} + \frac{\sigma\nu\upsilon (\frac{\pi}{2\kappa}\cdot\kappa)}{\kappa} - \frac{\sigma\nu\upsilon (0)}{k}\\
+    \implies &E(\Omega) = \frac{\pi}{2\kappa} - \frac{1}{\kappa} = \frac{\pi-2}{2\kappa}
+\end{align*}
+\begin{align*}
+    \lim_{\kappa\to+\infty}E(\Omega) = \lim_{\kappa\to+\infty}\frac{\pi-2}{2\kappa} = (\pi-2)\cdot 0 = 0
+\end{align*}
+\end{center}
